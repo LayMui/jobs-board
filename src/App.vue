@@ -4,7 +4,7 @@
 
       <div class="bg-white rounded shadow px-4 py-5 border-b border-gray-200 sm:px-6 mb-8">
         <h3 class="text-lg leading-6 font-medium text-gray-900 mb-3">
-          Add new Job
+          Looking for job
         </h3>
 
         <live-preview :jobProp="job"></live-preview>

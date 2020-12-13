@@ -11,20 +11,20 @@
 
         <div class="mt-1 text-sm leading-5 text-gray-500 py-2">
           <label class="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2">Name</label>
-          <input type="text" name="name" v-model="job.name" class="appearance-none block w-full bg-white text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey"/>
+          <input type="text" name="name" data-qa="jobName" v-model="job.name" class="appearance-none block w-full bg-white text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey"/>
         </div>
 
         <div class="mt-1 text-sm leading-5 text-gray-500 py-2">
           <label class="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2">Duration</label>
-          <input type="text" name="name" v-model="job.duration" class="appearance-none block w-full bg-white text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey"/>
+          <input type="text" name="name" data-qa="jobDuration" v-model="job.duration" class="appearance-none block w-full bg-white text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey"/>
         </div>
 
         <div class="mt-1 text-sm leading-5 text-gray-500 py-2">
           <label class="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2">Date</label>
-          <input type="date" name="name" v-model="job.date" class="appearance-none block w-full bg-white text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey"/>
+          <input type="date" name="name" data-qa="jobDate" v-model="job.date" class="appearance-none block w-full bg-white text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey"/>
         </div>
 
-        <button @click="submitJob" class="mt-5 bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded text-xs">
+        <button @click="submitJob" data-qa="jobSubmit" class="mt-5 bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded text-xs">
           Submit
         </button>
       </div>

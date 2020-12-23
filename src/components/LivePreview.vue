@@ -9,7 +9,7 @@
                 </div>
                 <div class="ml-2 flex-shrink-0 flex">
                 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                    {{jobProp.duration}}
+                    {{jobProp.duration | capitalize}}
                 </span>
                 </div>
             </div>
@@ -31,6 +31,16 @@
 
 <script>
 export default {
+
+  filters: {
+    capitalize(string) {
+        return string = string.toLowerCase()
+        .split(' ')
+        .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+        .join(' ');
+    }
+  
+  },
     props: {
         jobProp: {
             type: Object,

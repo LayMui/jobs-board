@@ -20,7 +20,7 @@
                 </svg>
                 <span>
                     Closing on
-                    <time datetime="2020-01-07">{{jobProp.date}}</time>
+                    <time datetime="2020-01-07">{{jobProp.date | getFormatDate}}</time>
                 </span>
                 </div>
             </div>
@@ -29,18 +29,22 @@
 </div>
 </template>
 
-<script>
-export default {
 
+ <script>
+import moment from 'moment'
+ 
+ export default {
   filters: {
     capitalize(string) {
         return string = string.toLowerCase()
         .split(' ')
         .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
         .join(' ');
-    }
-  
-  },
+    },
+     getFormatDate(string) {
+                return moment(string).format('DD MMMM YYYY');
+        }
+    },
     props: {
         jobProp: {
             type: Object,

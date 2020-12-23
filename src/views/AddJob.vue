@@ -1,9 +1,8 @@
 <template>
       <div class="bg-white rounded shadow px-4 py-5 border-b border-gray-200 sm:px-6 mb-8">
         <h3 class="text-lg leading-6 font-medium text-gray-900 mb-3">
-          Add new Job
+          Add new job
         </h3>
-
         <live-preview :jobProp="job"></live-preview>
 
         <div class="mt-1 text-sm leading-5 text-gray-500 py-2">
@@ -13,7 +12,7 @@
 
         <div class="mt-1 text-sm leading-5 text-gray-500 py-2">
           <label class="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2">Duration</label>
-          <input type="text" name="name" data-qa="jobDuration" v-model="job.duration" class="appearance-none block w-full bg-white text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey"/>
+          <input placeholder="part time" type="text" name="name" data-qa="jobDuration" v-model="job.duration" class="appearance-none block w-full bg-white text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey"/>
         </div>
 
         <div class="mt-1 text-sm leading-5 text-gray-500 py-2">
@@ -31,16 +30,12 @@
 // @ is an alias to /src
 
 import LivePreview from '@/components/LivePreview'
+import { jobsData } from "@/data/job"
 export default {
   name: 'AddJob', //for debugging purpose
   data() {
       return {
-        job: {
-          id: null,
-            name: "Frontend developer",
-            duration: "part time",
-            date: ""
-        },
+        job: jobsData[0]
       }
   },
   components: {
@@ -61,7 +56,7 @@ export default {
         localStorage.setItem('jobs', JSON.stringify(jobsArray))
     //   localStorage.setItem('job', JSON.stringify(this.job))
     //   this.jobs.push(this.job);
-        alert('submited ' + this.job.id)
+        alert('submitted ' + this.job.id)
 
       
     }
@@ -72,5 +67,5 @@ export default {
 <style scoped>
 button:disabled {
     opacity: 0.8;
-}
+} 
 </style>

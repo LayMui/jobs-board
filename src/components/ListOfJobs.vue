@@ -12,7 +12,7 @@
                   </div>
                   <div class="ml-2 flex-shrink-0 flex">
                     <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                      {{job.duration}}
+                      {{job.duration | capitalize}}
                     </span>
                   </div>
                 </div>
@@ -23,7 +23,7 @@
                     </svg>
                     <span>
                       Closing on
-                      <time datetime="2020-01-07">{{job.date}}</time>
+                      <time datetime="2020-01-07">{{job.date | getFormatDate}}</time>
                     </span>
                   </div>
                 </div>
@@ -37,7 +37,19 @@
 </template>
 
 <script>
+import moment from 'moment'
 export default {
+   filters: {
+    capitalize(string) {
+        return string = string.toLowerCase()
+        .split(' ')
+        .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+        .join(' ');
+    },
+     getFormatDate(string) {
+                return moment(string).format('DD MMMM YYYY');
+        }
+    },
     props: {
         jobsArray: {
             type: Array,

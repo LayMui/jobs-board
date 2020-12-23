@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import JobsListing from '../views/JobsListing.vue'
 import AddJob from '../views/AddJob.vue'
+import JobDetail from '../views/JobDetail.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -14,6 +15,11 @@ const routes = [
     path: '/add',
     name: 'AddJob',
     component: AddJob
+  },
+  {
+    path: '/:i',
+    name: 'JobDetail',
+    component: JobDetail
   },
   
 ]

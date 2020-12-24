@@ -92,6 +92,12 @@ https://vercel.com
 
 
 # Build a docker image for the app
+
+Delivering our Vue.js app as a Docker image helps reducing, 
+if not removing entirely, the difference between running the service on a developer’s laptop, the production environment or any environment we may think of.
+
+So creating a Docker image for our Vue.js app is a good choice here because that would represent our final build artifact, the same artifact that would be verified against our continuous delivery pipeline and that could potentially be released to production with confidence.
+
 Create the Dockerfile
 ```
 docker build -t laymui/dockerize-job-board-app .

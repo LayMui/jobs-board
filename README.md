@@ -89,3 +89,16 @@ It compile the HTML, CSS and JS and generate one index.html
 
 Hosting
 https://vercel.com
+
+
+# Build a docker image for the app
+Create the Dockerfile
+```
+docker build -t laymui/dockerize-job-board-app .
+```
+Run the app in the docker container:
+```
+docker run -it -p 8080:8080 --rm --name dockerize-job-board-app laymui/dockerize-job-board-app 
+```
+The app is accessible at
+http://127.0.0.1:8080

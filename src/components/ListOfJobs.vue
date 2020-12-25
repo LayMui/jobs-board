@@ -47,8 +47,8 @@ export default {
         .join(' ');
     },
      getFormatDate(string) {
-                return moment(string).format('DD MMMM YYYY');
-        }
+          return moment(string).format('DD MMMM YYYY');
+      }
     },
     props: {
         jobsArray: {

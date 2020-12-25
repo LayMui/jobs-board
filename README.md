@@ -91,6 +91,30 @@ Hosting
 https://vercel.com
 
 
+# Session 2 Intermediate
+ Implement Vue Router
+ ```
+ 1. / - list of remote jobs
+ 2. /add - add remote job
+```
+ Form Validations
+ ```
+ 1. Disable the submit button if the form input is not complete or invalid
+```
+
+Vue Filter
+```
+1. Apply formatting to Date form input 
+reference https://momentjs.com
+2. Apply formatting to Date list jobs
+```
+Store the job in the local storage
+```
+1. Whenever user submit the job form, store it inside the local storage
+
+2. Use the data from local storage and display it in the front page
+```
+
 # Build a docker image for the app
 
 Delivering our Vue.js app as a Docker image helps reducing, 

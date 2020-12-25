@@ -11,7 +11,8 @@ export default {
   name: 'JobsListing', //for debugging purpose // can cause max callstack issue
   data() {
       return {
-        jobs: []
+        jobs: [],
+       
       }
   },
   components: {

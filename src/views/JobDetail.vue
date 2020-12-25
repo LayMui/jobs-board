@@ -3,7 +3,7 @@
   <div class="max-w-xl mx-auto py-16">
     <h3 class="font-black text-gray-700 text-3xl tracking-tight mb-4 flex items-center">
     
-      
+    {{"What to put here??"}}
       <div class="h-3 w-3 bg-blue-500 rounded-full ml-3"></div>
     </h3>
     <div class="bg-white shadow overflow-hidden sm:rounded-md p-8">
@@ -42,20 +42,19 @@
 </template>
 
 <script>
-
+//import { jobsData } from "@/data/job"
 export default {
    name: 'JobDetail', //for debugging purpose
    data() {
       return {
         id: this.$route.params.id,
-        job: this.getJob(),
+        job: {}
       }
   },
   mounted() {
-    //this.getJob()
-   
+    this.job = this.getJob()
+
   },
-  
   methods: {
     getJob() {
      
@@ -63,10 +62,8 @@ export default {
         // 2. Get the job selected based on id
         // 3. Render to the JobDetail page
         let jobsArray = JSON.parse(localStorage.getItem('jobs'))
-console.log('I print out: ' + JSON.stringify(jobsArray[this.id]))
-        return JSON.stringify(jobsArray[this.id])
-   
-    
+        this.job = JSON.stringify(jobsArray[this.id+1])
+        return JSON.stringify(jobsArray[this.id+1])
       
     }
   }

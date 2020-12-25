@@ -2,8 +2,8 @@
 <div id="app" class="bg-gray-100 min-h-screen">
   <div class="max-w-xl mx-auto py-16">
     <h3 class="font-black text-gray-700 text-3xl tracking-tight mb-4 flex items-center">
+    
       
-    Backend    
       <div class="h-3 w-3 bg-blue-500 rounded-full ml-3"></div>
     </h3>
     <div class="bg-white shadow overflow-hidden sm:rounded-md p-8">
@@ -42,8 +42,34 @@
 </template>
 
 <script>
-export default {
 
+export default {
+   name: 'JobDetail', //for debugging purpose
+   data() {
+      return {
+        id: this.$route.params.id,
+        job: this.getJob(),
+      }
+  },
+  mounted() {
+    this.getJob()
+   
+  },
+  
+  methods: {
+    getJob() {
+     
+        // 1. Get all the job from local storage
+        // 2. Get the job selected based on id
+        // 3. Render to the JobDetail page
+        let jobsArray = JSON.parse(localStorage.getItem('jobs'))
+console.log('I print out: ' + JSON.stringify(jobsArray[this.id]))
+        return JSON.stringify(jobsArray[this.id])
+   
+    
+      
+    }
+  }
 }
 </script>
 

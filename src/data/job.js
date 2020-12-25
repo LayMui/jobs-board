@@ -1,12 +1,13 @@
+
 export const jobsData = [{
     id: 0,
     name: "Frontend Web developer",
     duration: "Part time",
-    date: "December 25, 2020"
+    date: new Date("26 December 2020")
 },{
     id: 1,
     name: "Backend developer",
     duration: "Part time",
-    date: "December 26, 2020"
+    date: new Date("26 December 2020")
 }]
 

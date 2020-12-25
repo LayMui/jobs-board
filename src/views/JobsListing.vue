@@ -19,7 +19,7 @@ export default {
   },
   mounted() {
     console.log(jobsData)
-    //this.jobs = jobsData
+    this.jobs = jobsData
 
     if(!localStorage.getItem('jobs')){
       this.loadInitialData()
@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     loadInitialData() {
-      console.log('load iniital data')
+      console.log('load initial data')
       localStorage.setItem('jobs', JSON.stringify(jobsData))
     },
     fetchData() {

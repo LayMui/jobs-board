@@ -52,7 +52,7 @@ export default {
       }
   },
   mounted() {
-    this.getJob()
+    //this.getJob()
    
   },
   

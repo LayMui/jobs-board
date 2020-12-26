@@ -11,9 +11,16 @@
         </div>
 
         <div class="mt-1 text-sm leading-5 text-gray-500 py-2">
-          <label class="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2">Duration</label>
-          <input placeholder="part time" type="text" name="name" data-qa="jobDuration" v-model="job.duration" class="appearance-none block w-full bg-white text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey"/>
-        </div>
+         <label class="block mb-4">
+          <span class="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2">Duration</span>
+          <select data-qa="jobDuration" class="bg-gray-100 p-3 block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+            <option data-qa="partTime" value="part-time">Part Time</option>
+            <option data-qa="fullTime" value="full-time">Full Time</option>
+            <option data-qa="freelance" value="freelance">Freelance</option>
+            <option data-qa="contract" value="contract">Contract</option>
+          </select>
+      </label>
+</div>
 
         <div class="mt-1 text-sm leading-5 text-gray-500 py-2">
           <label class="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2">Date</label>
@@ -60,17 +67,8 @@ export default {
 
         jobsArray.push(this.job)
         localStorage.setItem('jobs', JSON.stringify(jobsArray))
-        //alert('submitted ' + this.job.id)
-        this.$v.$touch()
-        if (this.$v.$invalid) {
-          this.submitStatus = 'ERROR'
-        } else {
-          // do your submit logic here
-          this.submitStatus = 'PENDING'
-          setTimeout(() => {
-            this.submitStatus = 'OK'
-          }, 500)
-        }   
+        // Redirect to the list of jobs view
+        this.$router.push("/");
     }
   }
 }

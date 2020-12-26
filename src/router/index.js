@@ -5,6 +5,7 @@ import AddJob from '../views/AddJob.vue'
 import JobDetail from '../views/JobDetail.vue'
 Vue.use(VueRouter)
 
+
 const routes = [
   {
     path: '/',

@@ -2,8 +2,8 @@
 <div id="app" class="bg-gray-100 min-h-screen">
   <div class="max-w-xl mx-auto py-16">
     <h3 class="font-black text-gray-700 text-3xl tracking-tight mb-4 flex items-center">
-    
-    {{"What to put here??"}}
+    {{job.name}}
+   
       <div class="h-3 w-3 bg-blue-500 rounded-full ml-3"></div>
     </h3>
     <div class="bg-white shadow overflow-hidden sm:rounded-md p-8">
@@ -14,15 +14,14 @@
           </svg>
           <span>
             Closing on
-            <time datetime="2020-01-07">January 7, 2021</time>
+            <time datetime="2020-01-07">{{job.date}}</time>
           </span>
         </div>
 
-        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"> Full-time </span>
+        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"> {{job.duration}} </span>
       </div>
       <div class="text-gray-800 leading-7">
         <p class="mb-4">Excited about the future of AI and AR? Want to build tools that will positively impact lives of millions people around the world? Read on!</p>
-        <p class="mb-4">At Passio we are creating a pioneering edge-ai platform that transforms existing applications and products by adding a wide range of AI capabilities. Take a look at the capabilities of our Nutrition-AI platform and imagine the opportunities it represents: <a href="https://youtu.be/XvcHc8Ua5ww" class="text-blue-500 border-b border-blue-300" target="_blank">https://youtu.be/XvcHc8Ua5ww</a></p>
         <p class="mb-4">We are growing our distributed team and are looking for a talented Backend Engineer with experience in Go, GCP, AWS, SQL, JS, Python, and React. You will be joining a growing team and helping us build the future where every application and product is imbued with intelligence.</p>
 
         <p class="mb-4">Responsibilities:</p>
@@ -62,9 +61,8 @@ export default {
         // 2. Get the job selected based on id
         // 3. Render to the JobDetail page
         let jobsArray = JSON.parse(localStorage.getItem('jobs'))
-        this.job = JSON.stringify(jobsArray[this.id+1])
-        return JSON.stringify(jobsArray[this.id+1])
-      
+        this.job = jobsArray[this.id]
+        return this.job
     }
   }
 }

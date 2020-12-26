@@ -44,7 +44,6 @@ export default {
   methods: {
     submitJob() {
       console.log(this.job)
-
         // 1. Get all the job from local storage
         // 2. Add the new job inside it
         // 3. Store it back inside the local storage
@@ -54,11 +53,8 @@ export default {
 
         jobsArray.push(this.job)
         localStorage.setItem('jobs', JSON.stringify(jobsArray))
-    //   localStorage.setItem('job', JSON.stringify(this.job))
-    //   this.jobs.push(this.job);
         alert('submitted ' + this.job.id)
-
-      
+   
     }
   }
 }

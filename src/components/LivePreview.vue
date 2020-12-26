@@ -20,7 +20,7 @@
                 </svg>
                 <span>
                     Closing on
-                    <time datetime="2020-01-07">{{jobProp.date | getFormatDate}}</time>
+                    <time datetime="25 December 2020">{{jobProp.date | getFormatDate}}</time>
                 </span>
                 </div>
             </div>

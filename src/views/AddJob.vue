@@ -31,12 +31,19 @@
 
 import LivePreview from '@/components/LivePreview'
 import { jobsData } from "@/data/job"
+import { required, minLength } from 'vuelidate/lib/validators'
 export default {
   name: 'AddJob', //for debugging purpose
   data() {
       return {
-        job: jobsData[0]
+        job: jobsData[0],
       }
+  },
+  validations: {
+    name: {
+      required,
+      minLength: minLength(4)
+    }
   },
   components: {
       LivePreview
@@ -53,8 +60,17 @@ export default {
 
         jobsArray.push(this.job)
         localStorage.setItem('jobs', JSON.stringify(jobsArray))
-        alert('submitted ' + this.job.id)
-   
+        //alert('submitted ' + this.job.id)
+        this.$v.$touch()
+        if (this.$v.$invalid) {
+          this.submitStatus = 'ERROR'
+        } else {
+          // do your submit logic here
+          this.submitStatus = 'PENDING'
+          setTimeout(() => {
+            this.submitStatus = 'OK'
+          }, 500)
+        }   
     }
   }
 }

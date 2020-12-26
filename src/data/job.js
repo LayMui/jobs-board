@@ -1,13 +1,13 @@
-
+import moment from 'moment'
 export const jobsData = [{
     id: 0,
-    name: "",
-    duration: "",
-    date: ""
+    name: "Backend developer",
+    duration: "Part time",
+    date: moment("27 December 2020").format('DD MMMM YYYY')
 },{
     id: 1,
     name: "Backend developer",
     duration: "Part time",
-    date: "26 December 2020"
+    date: moment("26 December 2020").format('DD MMMM YYYY')
 }]
 

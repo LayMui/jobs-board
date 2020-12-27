@@ -27,7 +27,7 @@
           <input type="date" name="name" data-qa="jobDate" v-model="job.date" class="appearance-none block w-full bg-white text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey"/>
         </div>
 
-        <button :disabled="!job.name || !job.duration || !job.date" @click="submitJob" data-qa="jobSubmit" class="mt-5 bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded text-xs">
+        <button :disabled="$v.$invalid" @click="submitJob" data-qa="jobSubmit" class="mt-5 bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded text-xs">
           Submit
         </button>
       </div>
@@ -44,6 +44,7 @@ export default {
   data() {
       return {
         job: jobsData[0],
+        submitStatus: null
       }
   },
   validations: {
@@ -57,7 +58,14 @@ export default {
   },
   methods: {
     submitJob() {
-      console.log(this.job)
+        this.$v.$touch()
+        if (this.$v.$invalid) {
+          this.submitStatus = 'ERROR'
+        } else {
+          this.submitStatus = 'PENDING'
+          setTimeout(() => {
+            this.submitStatus = 'OK'}, 500)
+        }
         // 1. Get all the job from local storage
         // 2. Add the new job inside it
         // 3. Store it back inside the local storage

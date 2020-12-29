@@ -9,6 +9,7 @@
           <label class="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2">Name</label>
           <input placeholder="Frontend Developer" type="text" name="name" data-qa="jobName" v-model="job.name" class="appearance-none block w-full bg-white text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey"/>
         </div>
+     
 
         <div class="mt-1 text-sm leading-5 text-gray-500 py-2">
          <label class="block mb-4">

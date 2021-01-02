@@ -7,8 +7,10 @@
 
         <div class="mt-1 text-sm leading-5 text-gray-500 py-2">
           <label class="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2">Name</label>
-          <input placeholder="Frontend Developer" type="text" name="name" data-qa="jobName" v-model="job.name" class="appearance-none block w-full bg-white text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey"/>
+          <input placeholder="Frontend Developer" type="text" name="name" data-qa="jobName" v-model.lazy="$v.job.name.$model" class="appearance-none block w-full bg-white text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey"/>
         </div>
+          <p class="error" v-if="!$v.job.name.required">This field is required</p>
+          <p class="error" v-if="!$v.job.name.minLength">Field must have at least {{ $v.job.name.$params.minLength.min }} characters.</p>
      
 
         <div class="mt-1 text-sm leading-5 text-gray-500 py-2">
@@ -21,7 +23,7 @@
             <option data-qa="contract" value="contract">Contract</option>
           </select>
       </label>
-</div>
+  </div>
 
         <div class="mt-1 text-sm leading-5 text-gray-500 py-2">
           <label class="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2">Date</label>
@@ -52,11 +54,12 @@ export default {
         }
       }
   },
-  validations: {
+  validations: { // validations object to mirror our data
+  // in the template, we'll use that computed property $model in the validations object
     job: {
       name: {
         required,
-        minLength: minLength(4)
+        minLength: minLength(4) //key-value pair 
       }
     }
   },
@@ -83,6 +86,10 @@ export default {
 </script>
 
 <style scoped>
+.error {
+  color: red;
+  font-size: 8pt;
+}
 button:disabled {
     opacity: 0.8;
 } 

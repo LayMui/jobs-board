@@ -132,3 +132,6 @@ docker run -it -p 8080:8080 --rm --name dockerize-job-board-app laymui/dockerize
 ```
 The app is accessible at
 http://127.0.0.1:8080
+
+# Tutorial for learning how to implement validation 
+https://css-tricks.com/form-validation-in-under-an-hour-with-vuelidate/

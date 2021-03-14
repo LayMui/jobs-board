@@ -1,7 +1,7 @@
 <template>
 
   <div>
-      <h3 class="mb-4">Today {{today}} remote job</h3>
+      <h3 class="mb-4">Today {{today | getFormatDate }} remote job</h3>
      <img src="http://i.stack.imgur.com/SBv4T.gif" alt="this slowpoke moves"  width=250/>
                                 
          <div class="bg-white shadow overflow-hidden sm:rounded-md">
@@ -54,10 +54,10 @@ export default {
      getFormatDate(string) {
           return moment(string).format('DD MMMM YYYY');
       },
+      today() {
+        return new Date()
+      }
       
-    },
-    today() {
-      return new Date();
     },
     props: {
         jobsArray: {

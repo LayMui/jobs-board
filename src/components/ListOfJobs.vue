@@ -1,7 +1,10 @@
 <template>
+
   <div>
       <h3 class="mb-4">Today remote job</h3>
-      <div class="bg-white shadow overflow-hidden sm:rounded-md">
+     <img src="http://i.stack.imgur.com/SBv4T.gif" alt="this slowpoke moves"  width=250/>
+                                
+         <div class="bg-white shadow overflow-hidden sm:rounded-md">
         <ul>
           <li v-for="(job, index) in jobsArray" :key="index">
             <router-link :to="'' + index" class="block hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out">
@@ -38,6 +41,8 @@
 
 <script>
 import moment from 'moment'
+
+
 export default {
    filters: {
     capitalize(string) {
@@ -50,6 +55,7 @@ export default {
           return moment(string).format('DD MMMM YYYY');
       }
     },
+    
     props: {
         jobsArray: {
             type: Array,
